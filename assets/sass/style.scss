@@ -110,6 +110,11 @@ body {
     align-content: stretch;
     align-items: center;
     background-color: $background;
+
+    @media only screen and (max-width: 800px) {
+        display: block;
+    }
+
     }
 
 .container {
