@@ -1,0 +1,295 @@
+$background:        #202025;
+$text-primary:      #eeeeee;
+$font-primary:       'Rubik', sans-serif;
+$font-size:         18px;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+/* Remove link underline */
+a {
+    text-decoration: none;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Main layout */
+html {
+    font-family: $font-primary;
+    font-size: $font-size;
+    color: $text-primary;
+
+    @media only screen and (max-width: 800px) {
+        font-size: 16px;
+    }
+
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    background-color: $background;
+    }
+
+.container {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    max-width: 800px;
+    margin: 64px;
+    }
+
+.logo {
+    max-width: 80px;
+    margin: {
+        bottom: 40px;
+    }
+}
+
+.title {
+    display: inline-block;
+    margin: {
+        bottom: 16px;
+    }
+    padding: {
+        top: 6px;
+        right: 12px;
+        bottom: 6px;
+        left: 12px;
+    }
+    border: {
+        style: solid;
+        width: 2px;
+        color: rgba(255,255,255,.2);
+        radius: 12px;
+    }
+    font-size: 1.333rem;
+}
+
+.headline {
+    font-size: 2.667rem;
+    font-weight: bold;
+    line-height: 3.556rem;
+
+    @media only screen and (max-width: 800px) {
+        font-size: 1.889rem;
+        line-height: 2.667rem;
+    }
+
+}
+
+.text-highlight {
+	color: #FB41B9;
+	background-image: -webkit-linear-gradient(92deg, #FB41B9, #FFB649);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 15s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+  }
+
+hr {
+    margin: {
+        top: 40px;
+        right: 0;
+        left: 0;
+        bottom: 40px;
+    }
+    border-top: {
+        width: 0;
+    }
+    border-bottom: {
+        width: 1px;
+        style: solid;
+        color: rgba(255,255,255,.12);
+    }
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: {
+        top: 0;
+        right: 20px;
+        bottom: 0;
+        left: 20px;
+    }
+    background: #393954;
+    border: {
+        style: solid;
+        width: 1px;
+        color: rgba(255, 255, 255, 0.16);
+        radius: 100px;
+    }
+    color: $text-primary;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--primary {
+        background: linear-gradient(91.4deg, #A83DE9 -10.13%, #3F19CD 109.73%);
+    }
+    
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    &--discord {
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: {
+                image: url(../img/icon-discord.svg);
+                repeat: no-repeat;
+                position: center;
+                size: 24px;
+            }
+        }
+
+    }
+
+}
+
+ul.coms-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    margin: {
+        bottom: 48px;
+    }
+
+    li {
+        order: 0;
+        flex: 0 1 50%;
+        align-self: auto;
+        list-style-type: none;
+        margin: {
+            bottom: 8px;
+        }
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            background: {
+                image: url(../img/bullet.svg);
+                repeat: no-repeat;
+                position: center;
+                size: 22px;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            flex: 1 1 100%;
+            margin: {
+                bottom: 4px;
+            }
+        }
+
+        }
+
+    }
