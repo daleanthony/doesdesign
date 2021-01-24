@@ -208,11 +208,20 @@ hr {
     }
     border-top: {
         width: 0;
+        style: solid;
+    }
+    border-right: {
+        style: solid;
+        width: 0;
     }
     border-bottom: {
         width: 1px;
         style: solid;
         color: rgba(255,255,255,.12);
+    }
+    border-left: {
+        width: 0;
+        style: solid;
     }
 
     @media only screen and (max-width: 800px) {
